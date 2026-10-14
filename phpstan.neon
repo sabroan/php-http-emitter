@@ -1,0 +1,10 @@
+parameters:
+    level: max
+    phpVersion: 80500
+    paths:
+        - src
+        - tests
+    checkUninitializedProperties: true
+    checkImplicitMixed: true
+    checkBenevolentUnionTypes: true
+    checkMissingCallableSignature: true

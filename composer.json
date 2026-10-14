@@ -1,0 +1,52 @@
+{
+    "name": "sabroan/http-emitter",
+    "description": "A PSR-7 HTTP response emitter",
+    "license": "MIT",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=8.5",
+        "psr/http-message": "^2",
+        "sabroan/http-emitter-interface": "^1"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.54",
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^2.3",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.1",
+        "phpunit/phpunit": "^13",
+        "roave/security-advisories": "dev-latest",
+        "vimeo/psalm": "^7@beta"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sabroan\\Http\\Emitter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sabroan\\Http\\Emitter\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "check": [
+            "@composer-check",
+            "@cs-check",
+            "@phpstan",
+            "@psalm",
+            "@phpunit"
+        ],
+        "composer-check": "composer normalize",
+        "cs-check": "vendor/bin/php-cs-fixer check --diff",
+        "phpstan": "vendor/bin/phpstan analyse --memory-limit=1G",
+        "phpunit": "vendor/bin/phpunit --testdox --reverse-list --stop-on-failure --display-phpunit-deprecations --display-deprecations",
+        "psalm": "vendor/bin/psalm"
+    }
+}

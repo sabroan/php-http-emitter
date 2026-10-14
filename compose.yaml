@@ -1,0 +1,15 @@
+services:
+    composer:
+        container_name: composer
+        image: composer:latest
+        volumes:
+            - .:/app
+        command:
+        - sh
+        - -c
+        - >-
+            composer install
+            --optimize-autoloader
+            --classmap-authoritative
+            --apcu-autoloader
+            && composer check
